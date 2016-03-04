@@ -4,9 +4,95 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
+    <div class="nav">
+        <nav>
+            <ul>
+                <li class="borderRight"><a href ="#">View music</a></li> 
+                <li class="borderRight"><a href="#">Add music</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="optionsAndSonglist">
+        <section class="options">
+            <form>
+                    <label for="songLength">Song Length:</label>
+                    <input type="range" name="songLength" class="songLength">
+                    
+                    <label for="artist">Artist:</label>
+                    <select name="artist">
+                      <option value="theWiggles">The Wiggles</option> 
+                      <option value="theOkeeDokeeBrothers">The Okee Dokee Brothers</option>
+                      <option value="alvinAndTheChipmunks">Alvin and the Chipmunks</option>
+                      <option value="kidzBopKids">Kidz Bop Kids</option>
+                      <option value="hi5">Hi 5</option>
+                    </select>
+
+                    <label for="album">Album:</label>
+                    <select name="album">
+                      <option value="kidzBop30">Kidz Bop 30</option> 
+                      <option value="takingItOutside">Taking it Outside</option>
+                      <option value="christmasWithTheChipmunks">Christmas with the Chipmunks</option>
+                      <option value="yummyYummy">Yummy Yummy</option>
+                      <option value="spaceMagic">Space Magic</option>
+                    </select>
+
+                    
+                    <section class="checkboxes">
+                    <label>Genre:</label>
+                        <ul class="checkbox"> 
+                          <li><input type="checkbox" id="rock" value="rock" /><label for="rock">Rock</label></li>
+                          <li><input type="checkbox" id="classical" value="classical" /><label for="classical">Classical</label></li>  
+                          <li><input type="checkbox" id="pop" value="pop" /><label for="pop">Pop</label></li> 
+                          <li><input type="checkbox" id="jazz" value="jazz" /><label for="jazz">Jazz</label></li> 
+                          <li><input type="checkbox" id="blues" value="blues" /><label for="blues">Blues</label></li> 
+                          <li><input type="checkbox" id="hiphop" value="hiphop" /><label for="hiphop>">Hip Hop</label></li> 
+                        </ul> 
+                    </section>
+
+                    <a class="button">Filter</a>
+            </form>
+        </section>
+    
+
+        <section class="songList">
+            <section>
+                <h2>Song Name</h2>
+                    <ul class="song">
+                        <li class="borderRight">Artist Name</li>
+                        <li class="borderRight">Album Name</li>
+                        <li>Genre</li>
+                    </ul>
+            <section>
+                <h2>Song Name</h2>
+                    <ul class="song">
+                        <li class="borderRight">Artist Name</li>
+                        <li class="borderRight">Album Name</li>
+                        <li>Genre</li>
+                    </ul>
+            </section>
+               <section>
+                <h2>Song Name</h2>
+                    <ul class="song">
+                        <li class="borderRight">Artist Name</li>
+                        <li class="borderRight">Album Name</li>
+                        <li>Genre</li>
+                    </ul>
+            <section>
+                <h2>Song Name</h2>
+                    <ul class="song">
+                        <li class="borderRight">Artist Name</li>
+                        <li class="borderRight">Album Name</li>
+                        <li>Genre</li>
+                    </ul>
+            </section>
+        </section>
+    <div>
 
 
 </body>

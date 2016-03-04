@@ -1,0 +1,140 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    width: 80%;
+    height: 80%;
+    margin:  40px auto;
+    min-width: 720px;
+}
+
+/************* Nav Menu *************/
+.nav {
+    background-color: #FFB4B0;
+    border: 2px solid black;
+    margin-bottom: .5em;
+    width: 100%;
+    font-size: 14px;
+    height: 3em;
+    padding: .25em 0 .5em;
+}
+
+/*Sets the pipes between links*/
+.borderRight {
+    border-right: 2px solid black;
+}
+
+/*Sets the pipes between links*/
+.nav li {
+    float: left;
+    list-style: none;
+    padding: 2px 7px 2px 7px;
+    margin: 0 20px 10px -20px;
+    height: 14px;
+}
+
+
+
+
+
+/************* Main Content *************/
+.optionsAndSonglist {
+    width: 100%;
+    height: 80%;
+    min-width: 720px;
+}
+
+/*Options Menu*/
+.options {
+    float: left;
+    background-color: #4DD7FA;
+    padding: 1% 1% 0 1% ;
+    height: 100%;
+    width: 20%;
+    border: 2px solid black;
+    margin: 7px 5px 0 0;
+    font-size: 12px;
+    min-width: 150px;
+}
+
+.songLength {
+    margin: 5px 10px;
+}
+
+/*Sets the width of the dropdown boxes*/
+select {
+    width: 130px;
+    margin: 5px 0 10px;
+}
+
+ul.checkbox {
+    width: 150px;
+}
+
+ul.checkbox li { 
+  border: 1px transparent solid;
+  width: 49%;
+  list-style: none;
+  float: left;
+  margin: 0 20px 7px -30px;
+}
+
+a.button {
+    display: inline-block;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 80px;
+    padding: 2px;
+    text-align: center;
+    margin: 10px 30px;
+    clear: both;
+    color: black;
+}
+
+label {
+    display: block;
+}
+
+.checkboxes label {
+    display: inline-block;
+}
+
+
+
+/*Songlist*/
+.songList {
+    float: right;
+    background-color: #FEFAC0;
+    width: 75%;
+    min-width: 540px;
+    height: 290px;
+    border: 2px solid black;
+    margin: 7px -3px 0 5px;
+}
+
+
+h2 {
+    clear: both;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px 10px -10px 20px;
+    color: #785616;
+}
+
+/*Sets all styling for song list items*/
+.song li {
+    float: left;
+    padding-right:9px;
+    list-style: none;
+    margin: 1% 6% 4% -5%;
+    font-size: 11px;
+}
+
+.songList .borderRight {
+    border-right: 1px solid black;
+}
+
+
+
+
