@@ -7,6 +7,15 @@ body {
     min-width: 720px;
 }
 
+/*Sets invisible property*/
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 /************* Nav Menu *************/
 .nav {
     background-color: #FFB4B0;
@@ -134,6 +143,35 @@ h2 {
 .songList .borderRight {
     border-right: 1px solid black;
 }
+
+
+/*Centers add music view section */
+
+
+#addMusicView {
+    margin: 0 auto;
+    position: relative;
+    top: -200px;
+    left: -100px;
+    display: inline-block;
+    width: 230px;
+
+}
+
+#addMusicView label {
+    display: inline-block;
+    float: left;
+    margin: 3px;
+}
+
+#addMusicView input {
+    display: inline-block;
+    float: right;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 3px;
+}
+
 
 
 
