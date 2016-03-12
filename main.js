@@ -14,6 +14,9 @@ var addArtistInput = document.getElementById("addArtist");
 var addAlbumInput = document.getElementById("addAlbum");
 var addButton = document.getElementById("addSong");
 
+
+var songSectionID = 0;
+
 // Read from local JSON file with an XHR.
 //Step 1: Set up http req for songs
 var mySongsReq = new XMLHttpRequest;
@@ -56,9 +59,26 @@ function listMusicView() {
 function addToDom(songArray){
     var buildString = ""
     for (var i = 0; i < songArray.length; i++) {
-        buildString += "<section> <h2>" + songArray[i]["name"] + "</h2> <ul class='song'> <li class='borderRight'>" +  songArray[i]["artist"] + "</li> <li class='borderRight'>" + songArray[i]["album"] + "</li> <li>" + songArray[i]["genre"] + "</li> </ul> </section>";
+        buildString += "<section id='sectionID" + songSectionID + "'> <h2>" + songArray[i]["name"] + "</h2> <ul class='song'> <li class='borderRight'>" +  songArray[i]["artist"] + "</li> <li class='borderRight'>" + songArray[i]["album"] + "</li> <li>" + songArray[i]["genre"] + "</li> </ul> <button class='deleteButton'>Delete</button> </section>";
+        songSectionID++;
     }
-    songList.innerHTML = buildString
+    songList.innerHTML = buildString;
+    
+    addEventListenerToDeleteButton();
+}
+
+function addEventListenerToDeleteButton() {
+    var deleteButtons = document.getElementsByClassName("deleteButton");
+    for (var i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener("click", deleteSong);
+    }
+}
+
+function deleteSong(e) {
+    var myParent = e.target.parentElement;
+    songList.removeChild(myParent);
+    console.log("myParent", myParent);
+    console.log("songList", songList);
 }
 
 

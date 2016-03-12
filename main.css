@@ -120,7 +120,6 @@ label {
     height: 300px;
     border: 2px solid black;
     margin: 7px -3px 0 5px;
-    overflow: auto;
     box-sizing: border-box;
 }
 
