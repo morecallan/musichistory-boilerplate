@@ -7,14 +7,35 @@ var addMusicPage = document.getElementById("addMusicView");
 // Song List Display Area
 var songList = document.getElementById("songList")
 //Song List Array
-var songArray = [["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"]];
+// var songArray = [["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"],["Song Name", "Artist", "Album"]];
 //Add Music Page Elements
 var addSongInput = document.getElementById("addSongName");
 var addArtistInput = document.getElementById("addArtist");
 var addAlbumInput = document.getElementById("addAlbum");
 var addButton = document.getElementById("addSong");
 
+// Read from local JSON file with an XHR.
+//Step 1: Set up http req for songs
+var mySongsReq = new XMLHttpRequest;
 
+//Step 2: Go get it
+mySongsReq.open("GET", "songs.json");
+mySongsReq.send();
+
+//Step 3: Event Listener
+mySongsReq.addEventListener("load", songsSuccess);
+mySongsReq.addEventListener("failed", failedExecution);
+
+//Step 4: Translate into JS
+function failedExecution() {
+    alert("Error loading page. Please refresh.")
+};
+
+//Step 5: Create callback for once the product page loads
+function songsSuccess() {
+    var songData = JSON.parse(this.responseText);
+    addToDom(songData.songs);
+}
 
 addMusic.addEventListener("click", addMusicView);
 viewMusic.addEventListener("click", listMusicView)
@@ -35,12 +56,10 @@ function listMusicView() {
 function addToDom(songArray){
     var buildString = ""
     for (var i = 0; i < songArray.length; i++) {
-        buildString += "<section> <h2>" + songArray[i][0] + "</h2> <ul class='song'> <li class='borderRight'>" +  songArray[i][1] + "</li> <li class='borderRight'>" + songArray[i][2] + "</li> <li>" + "Genre" + "</li> </ul> </section>";
+        buildString += "<section> <h2>" + songArray[i]["name"] + "</h2> <ul class='song'> <li class='borderRight'>" +  songArray[i]["artist"] + "</li> <li class='borderRight'>" + songArray[i]["album"] + "</li> <li>" + songArray[i]["genre"] + "</li> </ul> </section>";
     }
     songList.innerHTML = buildString
 }
-
-addToDom(songArray);
 
 
 // Grabs input from addSong page and creates an array
