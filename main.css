@@ -16,6 +16,10 @@ body {
     visibility: hidden;
 }
 
+.overflow {
+    overflow: auto;
+}
+
 /************* Nav Menu *************/
 .nav {
     background-color: #FFB4B0;
@@ -120,7 +124,6 @@ label {
     height: 300px;
     border: 2px solid black;
     margin: 7px -3px 0 5px;
-    overflow: auto;
     box-sizing: border-box;
 }
 
@@ -132,6 +135,12 @@ h2 {
     font-weight: normal;
     margin: 10px 10px -10px 20px;
     color: #785616;
+}
+
+#moreButton {
+    position: absolute;
+    top: 350px;
+    right: 50px;
 }
 
 /*Sets all styling for song list items*/
