@@ -13,6 +13,8 @@ var addSongInput = document.getElementById("addSongName");
 var addArtistInput = document.getElementById("addArtist");
 var addAlbumInput = document.getElementById("addAlbum");
 var addButton = document.getElementById("addSong");
+var moreMusic = document.getElementById("moreButton");
+
 
 
 var songSectionID = 0;
@@ -62,7 +64,7 @@ function addToDom(songArray){
         buildString += "<section id='sectionID" + songSectionID + "'> <h2>" + songArray[i]["name"] + "</h2> <ul class='song'> <li class='borderRight'>" +  songArray[i]["artist"] + "</li> <li class='borderRight'>" + songArray[i]["album"] + "</li> <li>" + songArray[i]["genre"] + "</li> </ul> <button class='deleteButton'>Delete</button> </section>";
         songSectionID++;
     }
-    songList.innerHTML = buildString;
+    songList.innerHTML += buildString;
     
     addEventListenerToDeleteButton();
 }
@@ -107,3 +109,30 @@ function addASong(newSongArray) {
     addToDom(songArray);
 }
 
+//When the user clicks the MORE button, load the songs from the second JSON file and append them to the bottom of the existing music, but before the More button.
+moreButton.addEventListener("click", loadNextJson);
+
+function loadNextJson(e) {
+    //Step 1: Set up http req for songs
+    var moreSongsReq = new XMLHttpRequest;
+
+    //Step 2: Go get it
+    moreSongsReq.open("GET", "songs2.json");
+    moreSongsReq.send();
+
+    //Step 3: Event Listener
+    moreSongsReq.addEventListener("load", moreSongsSuccess);
+    moreSongsReq.addEventListener("failed", failedExecution);
+
+    //Step 4: Translate into JS
+    function failedExecution() {
+        alert("Error loading page. Please refresh.")
+    };
+
+    //Step 5: Create callback for once the product page loads
+    function moreSongsSuccess() {
+        var moreSongData = JSON.parse(this.responseText);
+        songList.classList.add("overflow");
+        addToDom(moreSongData.songs);
+    };
+}
